@@ -1,13 +1,5 @@
-section {
-    &:nth-of-type(n) {
-      // Step 1
-      // a checkbox input and label element
-      // see html
-    }
-    &:nth-of-type(n + 2) {
-      // Step 2
-      // start the label styling
-      // with a white background
+
+  
       label {
         display: inline-block;
         position: relative;
@@ -15,23 +7,16 @@ section {
         width: 90px;
         background-color: #fff;
       }
-    }
-    &:nth-of-type(n+3) {
-      // Step 3
-      // round the corners,
-      // hide the font
-      // add mouse pointer on hover
+    
+   
       label {
         cursor: pointer;
         font-size: 0;
         color: transparent;
         border-radius: 22px;
       }
-    }
-    &:nth-of-type(n+4) {
-      // Step 4
-      // use an after pseudo element
-      // to make the grey circle
+    
+    
       label:after {
         content: '';
         display: block;
@@ -44,33 +29,18 @@ section {
         background-color: #e8e8e8;
         box-shadow: 2px 0px 0px rgba(0,0,0,0.15);
       }
-    }
-    &:nth-of-type(n+5) {
-      // Step 5
-      // use the sibling selector
-      // to style the label when
-      // the input is checked
+    
+    
       input:checked + label {
         background: #ffd000;
       }
-    }
-    &:nth-of-type(n+6) {
-      // Step 6
-      // on input check also...
-      // move the circle and
-      // change shadow direction
-      input:checked + label:after {
+    
+    label:after {
         right: 2px;
         background-color: #fff;
         box-shadow: -2px 0px 0px rgba(0,0,0,0.1);
       }
-    }
-    &:nth-of-type(n+7) {
-      // Step 7
-      // hide the input checkbox
-      // keep visable for screen reader
-      // then finally add transition to 
-      // label and pseudo element
+    
       input {
         position: absolute !important;
         width: 1px;
@@ -79,15 +49,15 @@ section {
         clip: rect(0, 0, 0, 0);
         bottom: 0;
       }
+      
       label {
         transition: background-color 500ms ease;
-        &:after {
+      }
+
+        label:after {
           transition: right 500ms ease, 
             background-color 500ms ease, 
             box-shadow 500ms ease;
-        }
-      }
-    }
   }
   
   
@@ -99,8 +69,7 @@ section {
   
   
   
-  
-  // Presentation styles
+ 
   
   .wrap {
     display: flex;
@@ -114,11 +83,11 @@ section {
     
   }
   
-  @for $i from 1 through 8 {
+  
     section:nth-of-type(#{$i}) {
       background-color: darken(#eee, $i * 1.5);
      }
-  }
+  
   
   .input-wrap {
     position: relative;
